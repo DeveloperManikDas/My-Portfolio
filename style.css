@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
 
 * {
     margin: 0;
@@ -9,10 +10,18 @@
 :root {
     --primary-background-color: #253B32;
     --secondary-background-color: #234138;
+    --light-background: #2D483F;
     --primary-font-color: #D4EDE4;
     --secondary-font-color: #8FDBC2;
     --tertiary-font-color: #598E7D;
     --primary-font-family: 'Poppins', sans-serif;
+    --color-backdrop: hsla(158, 23%, 18%, .7);
+}
+
+::selection {
+    background: var(--color-primary-accent);
+    color: var(--color-text-tertiary);
+
 }
 
 body {
@@ -20,9 +29,10 @@ body {
     display: flex;
     justify-content: center;
     overflow-x: hidden;
+    /* padding-bottom: 100px ; */
 }
 
-.content {
+main {
     width: 100%;
     padding: 0 30px;
 }
@@ -36,13 +46,14 @@ nav {
     border-radius: 30px;
     position: fixed;
     z-index: 99;
+
 }
 
 .active-tab {
     position: absolute;
     left: 5px;
     height: 75%;
-    background: #2D483F;
+    background: var(--light-background);
     transition: .3s;
     border-radius: 20px;
     z-index: -1;
@@ -53,6 +64,9 @@ nav {
     backdrop-filter: blur(10px);
     box-shadow: 0 0 5px .01px;
     transition: all ease .1s;
+    background: var(--color-backdrop);
+    backdrop-filter: blur(20px) saturate(1.7);
+    -webkit-backdrop-filter: blur(20px) saturate(1.7);
 }
 
 ul {
@@ -65,7 +79,8 @@ li {
     border-radius: 25px;
 }
 
-a, li button {
+a,
+li button {
     text-decoration: none;
     color: var(--primary-font-color);
     font-size: .7rem;
@@ -89,6 +104,92 @@ li a span {
     align-items: center;
 }
 
-h1 {
+.heading-lg {
     color: var(--secondary-font-color);
+    font-family: 'Sofia', cursive;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.intro-paragraph {
+    color: var(--primary-font-color);
+    padding-top: 20px;
+    font-family: var(--primary-font-family);
+    font-size: .9rem;
+    text-align: center;
+}
+
+
+
+
+.projects {
+    margin-top: 40px;
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #A3DCD4;
+    overflow: hidden;
+    text-align: right;
+    font-family: var(--primary-font-family);
+    position: relative;
+    margin-bottom: 20px;
+
+}
+
+figure img {
+    position: absolute;
+    left: 40px;
+    top: 90px;
+    border-top-left-radius: 20px;
+}
+
+.github-page {
+    height: 80px;
+    background-color: var(--light-background);
+    border-radius: 40px;
+    padding: 25px;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.github-page i {
+    font-size: 3rem;
+    color: #598E7D;
+    transition: .5s;
+
+}
+
+.github-info span {
+    font-size: .7rem;
+    font-family: var(--primary-font-family);
+    color: var(--primary-font-color);
+}
+
+.github-info a {
+    font-size: 1rem;
+}
+footer{
+    width: 100vw !important;
+
+}
+.social-icons{
+    height: 200px;
+    background-color: var(--secondary-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-icons i{
+    margin: 0 20px;
+    font-size: 1.5rem;
+    transition: .5s;
+}
+i:hover {
+    transition: .5s;
+    color: #ffffff; /* Change to a brighter color on hover */
+    color: green; /* Change to a brighter color on hover */
 }
