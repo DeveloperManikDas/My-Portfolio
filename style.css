@@ -29,16 +29,76 @@ body {
     display: flex;
     justify-content: center;
     overflow-x: hidden;
-    /* padding-bottom: 100px ; */
+    position: relative;
 }
 
 #preloader{
-    background: #fff url(https://icons8.com/preloaders/preloaders/1495/Spinner-3.gif) no-repeat center center;
-    position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    background-color: var(--light-background);
+    z-index: 100;
+    border: 2px solid ;
+    position: absolute;
 }
 
+
+.circle, .message {
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    position:absolute;
+    margin:auto;
+    width: 100px;
+    height: 100px;
+  }
+  .message
+  {text-align:center;
+    font-family: Impact, Charcoal, sans-serif;
+    padding-top:40px;
+    -webkit-animation: fonthide 1.3s linear infinite;
+    animation: fonthide 1.3s linear infinite;
+  }
+  .circle{
+    border-radius: 100%;
+  border: 6px solid var(--secondary-background-color);
+  border-left: 6px solid var(--primary-font-color);
+  border-right: 6px solid var(--primary-font-color);
+  animation: spin 1.3s linear infinite;
+   -webkit-animation: spin 1.3s linear infinite;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+@keyframes fonthide {
+    0% {
+        color:white;
+    }
+    100% {
+        color:var(--primary-font-color);
+    }
+}
+@-webkit-keyframes fonthide {
+    0% {
+        color:white;
+    }
+    100% {
+        color:var(--primary-font-color);
+    }
+  }
 
 main {
     width: 100%;
@@ -180,24 +240,30 @@ figure img {
 .github-info a {
     font-size: 1rem;
 }
-footer{
+
+footer {
     width: 100vw !important;
 
 }
-.social-icons{
+
+.social-icons {
     height: 200px;
     background-color: var(--secondary-background-color);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.social-icons i{
+
+.social-icons i {
     margin: 0 20px;
     font-size: 1.5rem;
     transition: .5s;
 }
+
 i:hover {
     transition: .5s;
-    color: #ffffff; /* Change to a brighter color on hover */
-    color: green; /* Change to a brighter color on hover */
+    color: #ffffff;
+    /* Change to a brighter color on hover */
+    color: green;
+    /* Change to a brighter color on hover */
 }

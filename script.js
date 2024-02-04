@@ -5,22 +5,17 @@ const activeTab = document.querySelector(".active-tab");
 activeTab.style.left = `${workLink.offsetLeft}px`;
 activeTab.style.width = `${workLink.offsetWidth}px`;
 
-let loader = document.getElementById('preloader')
-    function myPreloderFunction(){
-        loader.style.display = "none"
-    };
+let preloader = document.getElementById("preloader");
 
 window.addEventListener("load", function () {
-  hidePreloader();
+    hidePreloader();
 });
+function hidePreloader() {
+  preloader.style.display = "none";
+}
 
 window.addEventListener("scroll", checkScrollPosition);
 checkScrollPosition();
-
-function hidePreloader() {
-  document.getElementById("preloader").style.opacity = "0";
-  document.getElementById("preloader").style.visibility = "hidden";
-}
 
 function checkScrollPosition() {
   const fixedNavbar = document.getElementById("fix-navbar");
